@@ -4,6 +4,7 @@ import { ref } from "vue";
 const todoEmpty = ref("");
 const addNewTodos = ref([{ title: "", complete: false }]);
 const deleteTodo = ref([]);
+
 function pushingTodos() {
   addNewTodos.value.push({
     title: todoEmpty.value,
@@ -15,6 +16,7 @@ function pushingTodos() {
 function deleteActivity(index) {
   addNewTodos.value.splice(index, 1);
 }
+
 </script>
 
 <template>
@@ -23,18 +25,16 @@ function deleteActivity(index) {
   <div>
     <input name="newTodo" v-model="todoEmpty" />
     <button @click="pushingTodos">Add</button>
-    <button @click="deleteTodo(index)">Kill</button>
+    <button @click="deleteActivity(index)">Kill</button>
   </div>
 
   <ul :class="{ listItems }">
     <li v-for="(addNewTodos, index) in addNewTodos" :key="index">
       {{ addNewTodos.title }}
+      <input type="checkbox"/>
     </li>
   </ul>
 </template>
-
-
-
 
 <style>
 .listItems {
