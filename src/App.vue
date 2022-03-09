@@ -12,7 +12,7 @@ import Todo from './components/Todo.vue';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #e0e3e6;
+  color: #f3f0f0;
   margin: 4rem;
   background-color: rgb(0, 0, 0);
 }
