@@ -2,7 +2,7 @@
 import { ref } from "vue";
 
 const todoEmpty = ref("");
-const addNewTodos = ref([{ title: "", complete: false }]);
+const addNewTodos = ref([]);
 const deleteTodo = ref([]);
 
 function pushingTodos() {
@@ -27,17 +27,10 @@ function completedTodos(addNewTodos) {
 </script>
 
 <template>
-  <h1 :class="title">David's Todo-Shite!</h1>
-  <section class="background">
-    <img
-      class="backgroundImg"
-      alt="Background"
-      src="../assets/background.jpeg"
-    />
-  </section>
+  <h1 class="background">David's Todo-Shite!</h1>
 
   <label>Do something!</label>
-  <div class="">
+  <div class="buttonChoices">
     <input name="newTodo" v-model="todoEmpty" />
     <button @click="pushingTodos">Add</button>
     <button @click="deleteActivity(index)">Kill</button>
@@ -45,14 +38,13 @@ function completedTodos(addNewTodos) {
 
   <div class="list">
     <div
-      v-for="(addNewTodos, index) in addNewTodos"
+      v-for="(todo, index) in addNewTodos"
       class="listItem"
       :key="index"
     >
-      <span :class="{ completed: addNewTodos.complete }"
-        >{{ addNewTodos.title }}
+      <span :class="{ completed: todo.complete }"
+        >{{ todo.title }}
       </span>
-      {{ addNewTodos.title }}
       <input
         :class="{ complete: index.complete }"
         @click="completedTodos(index)"
@@ -63,9 +55,6 @@ function completedTodos(addNewTodos) {
 </template>
 
 <style>
-html {
-  background-color: rgb(0, 0, 0);
-}
 
 label {
   margin-left: -118px;
@@ -85,6 +74,14 @@ label {
 }
 
 input {
+  padding: 0px;
+
+}
+
+button {
+  border: 0px;
+  background-color: orange;
+  margin: 0.1rem;
 }
 
 .background {
@@ -92,6 +89,7 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  z-index: 0;
 }
 
 .backgroundImg {

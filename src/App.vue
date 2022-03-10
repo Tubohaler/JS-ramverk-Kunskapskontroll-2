@@ -14,7 +14,7 @@ import Todo from './components/Todo.vue';
   text-align: center;
   color: #f3f0f0;
   margin: 4rem;
-  background-color: rgb(0, 0, 0);
+
 }
 
 </style>
