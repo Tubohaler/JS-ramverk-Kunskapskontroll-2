@@ -17,10 +17,10 @@ function deleteActivity(index) {
   addNewTodos.value.splice(index, 1);
 }
 
-function completedTodos(addNewTodos) {
-  index.value.forEach((addNewTodos, index) => {
-    if (index === addNewTodos) {
-      addNewTodos.complete = !addNewTodos.complete;
+function completedTodos(target) {
+  addNewTodos.value.forEach((item, index) => {
+    if (index === target) {
+      item.complete = !item.complete;
     }
   });
 }
@@ -40,9 +40,10 @@ function completedTodos(addNewTodos) {
     <div v-for="(todo, index) in addNewTodos" class="listItem" :key="index">
       <span :class="{ completed: todo.complete }">{{ todo.title }} </span>
       <input
-        :class="{ complete: index.complete }"
         @click="completedTodos(index)"
         type="checkbox"
+        :checked="todo.complete"
+        v-model="todo.complete"
       />
     </div>
   </div>
@@ -132,7 +133,6 @@ form button {
   padding: 1rem;
   cursor: pointer;
   font-size: 1rem;
-  
 }
 
 .complete-btn {
