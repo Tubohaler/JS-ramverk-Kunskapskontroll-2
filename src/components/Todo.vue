@@ -72,6 +72,7 @@ label {
   margin-left: 0px;
   font-size: xx-large;
   font-family: cursive;
+  letter-spacing: 0.3rem;
   color: goldenrod;
 }
 
@@ -112,6 +113,7 @@ button {
 form button {
   font-size: 2.73rem;
   border: none;
+  margin-bottom: 0.5rem;
   z-index: 2;
 }
 form button {
@@ -126,9 +128,11 @@ form button {
   background: #ff6f47;
   color: white;
   border: none;
+  margin-bottom: 0.5rem;
   padding: 1rem;
   cursor: pointer;
   font-size: 1rem;
+  
 }
 
 .complete-btn {
