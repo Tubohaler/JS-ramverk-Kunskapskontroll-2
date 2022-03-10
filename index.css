@@ -3,7 +3,7 @@ html {
     radial-gradient(
       circle,
       rgba(0, 0, 0, 0.4) 40%,
-      rgb(59, 49, 49)
+      rgb(12, 4, 4)
     ),
     no-repeat center/contain url("./src/assets/background.jpeg") fixed;
     ;
